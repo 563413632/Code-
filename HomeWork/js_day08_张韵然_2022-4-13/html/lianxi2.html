@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 清除默认样式 */
+        body,
+        div,
+        input,
+        textarea,
+        p {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: #000;
+        }
+
+        #imgDiv {
+            width: 980px;
+            height: 330px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            border-top: 50px dotted rgb(160, 157, 157);
+            border-bottom: 50px dotted rgb(160, 157, 157);
+            /* box-sizing: border-box; */
+            overflow: hidden;
+            margin: 50px 0 0 50px;
+            background-color: #fff;
+            position: relative;
+        }
+
+        #imgList {
+            display: flex;
+            flex-wrap: nowrap;
+            width: auto;
+        }
+
+        #lt,
+        #gt {
+            font-size: 60px;
+            background: rgba(70, 69, 69, 0.452);
+            position: absolute;
+            top: calc(50% - 39px);
+            z-index: 2;
+        }
+
+        #gt {
+            right: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="" id="imgDiv">
+        <div id="lt">&lt;</div>
+        <div id="imgList">
+            <img class="img" src="../images/1.jpg" alt="">
+            <img class="img" src="../images/2.jpg" alt="">
+            <img class="img" src="../images/3.jpg" alt="">
+            <img class="img" src="../images/4.jpg" alt="">
+            <img class="img" src="../images/5.jpg" alt="">
+            <img class="img" src="../images/6.jpg" alt="">
+            <img class="img" src="../images/7.jpg" alt="">
+            <img class="img" src="../images/8.jpg" alt="">
+        </div>
+        <div id="gt">&gt;</div>
+    </div>
+
+    <script type="text/javascript">
+        var lt = document.getElementById('lt');
+        var gt = document.getElementById('gt');
+        imgList.style.marginLeft = '0px';
+        lt.onclick = function () {
+            xdzo();
+        }
+        gt.onclick = function () {
+            xdyb();
+        }
+
+        function xdzo() {
+            var imgList = document.getElementById('imgList');
+            console.log(imgList);
+            var mrgLeft = parseInt(imgList.style.marginLeft);
+            imgList.style.marginLeft = mrgLeft - 980 + 'px';
+            imgList.style.transition = 'all 0.5s linear';
+        }
+
+        function xdyb() {
+            var imgList = document.getElementById('imgList');
+            console.log(imgList);
+            // var mrgLeft = parseInt(imgList.style.marginLeft);
+            imgList.style.transform = "translateX(12.5%)";
+        }
+    </script>
+</body>
+
+</html>

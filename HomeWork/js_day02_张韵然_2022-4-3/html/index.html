@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // var a = parseInt(prompt(''));
+        var a = 10,
+            b = '23';
+        // a > b;
+        console.log(a == b)
+        // 1.用户户输入整数。
+        // 如果输入的是1～6 的整数，则程序输出:your number is in 1～6. c=（用户输入的数）
+        // 如果输入的是其它数字，输出:Your number is too large. c=（用户输入的数）
+        // var small
+        // var num = parseInt(prompt("请输入任意正整数"));
+        // if (num < 7) {
+        //     document.write("your number is in 1～6. c=" + num);
+        // } else
+        //     document.write("Your number is too large. c=" + num);
+
+
+
+        // 2.输入a ,b,c 三个个位数（0-9）之间，组成一个最大的三位数
+        // var a = parseInt(prompt('请输入第一个（0-9）之间的整数')),
+        //     b = parseInt(prompt('请输入第二个（0-9）之间的整数')),
+        //     c = parseInt(prompt('请输入第三个（0-9）之间的整数'));
+        // var num;
+        // if (a > b) {
+        //     if (a > c) {
+        //         if (b > c) {
+        //             num = a * 100 + b * 10 + c;
+        //             document.write(num);
+        //         } else {
+        //             num = a * 100 + c * 10 + b;
+        //             document.write(num);
+        //         }
+        //     } else {
+        //         num = c * 100 + a * 10 + b;
+        //         document.write(num);
+        //     }
+        // } else if (b > c) {
+        //     if (a > c) {
+        //         num = b * 100 + a * 10 + c;
+        //         document.write(num);
+        //     } else {
+        //         num = b * 100 + c * 10 + a;
+        //         document.write(num);
+        //     }
+        // } else {
+        //     num = c * 100 + b * 10 + a;
+        //     document.write(num);
+        // }
+
+
+        // 3、判定2000-2500年中是闰年的年，输出闰年的条件是：
+        // (1).能被4整除，但同时不能被100整除的年份都是闰年
+        // (2).能被400整除的年份是闰年
+        // 其它情况都不是闰年
+        // console.time("js");
+        // for (var year = 2000; year <= 25000; year++) {
+        //     if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0) {
+        //         console.log(year);
+        //     }
+        // }
+        // console.timeEnd("js");
+
+
+        // 4、编写代码:运输公司对用户计算运费.路程越远每公里运费越低。
+        // 每公里每吨货物的基本运费为10,货物重为w,距离为s,折扣为d,
+        // 则总运费f的计算公式为：f=10*w*s*(1-d)
+        // s<250km 没有折扣 250<=s<500 2%折扣 500<=s<1000 5%折扣 1000<=s<2000 8%折扣 2000<=s<3000 10%折扣 3000<=s 15%折扣
+        // var w = parseFloat(prompt('货物重量')),
+        //     s = parseFloat(prompt('公里数'));
+        // var f;
+        // if (s < 250) {
+        //     d = 0;
+        //     f = 10 * w * s * (1 - d);
+
+        // } else if (s < 500) {
+        //     d = 0.02
+        //     f = 10 * w * s * (1 - d);
+        // } else if (s < 1000) {
+        //     d = 0.05
+        //     f = 10 * w * s * (1 - d);
+
+        // } else if (s < 2000) {
+        //     d = 0.08
+        //     f = 10 * w * s * (1 - d);
+
+        // } else if (s < 3000) {
+        //     d = 0.1
+        //     f = 10 * w * s * (1 - d);
+
+        // } else if (s >= 3000) {
+        //     d = 0.15
+        //     f = 10 * w * s * (1 - d);
+
+        // }
+        // console.log('运费￥1' + f);
+
+
+
+        // 作业1.模拟自动饮料机
+
+        // 要求：
+
+        // 1.当输入0时，模拟自动饮料机停止运行
+
+        // 2.自动饮料机运行的过程中，当输入1-5时候给出对应的饮料(1.可口可乐 2.雪碧 3.鲜橙多 4.冰红茶 5.矿泉水)
+
+        // 输入其他值的时候给出非法操作提示，并提示重新输入
+        // var i = parseInt(prompt('请输入饮料序号'));
+        // switch (i) {
+        //     case 1:
+        //         console.log('可口可乐');
+        //         break;
+        //     case 2:
+        //         console.log('雪碧');
+        //         break;
+        //     case 3:
+        //         console.log('鲜橙多');
+        //         break;
+        //     case 4:
+        //         console.log('冰红茶');
+        //         break;
+        //     case 5:
+        //         console.log('矿泉水');
+        //         break;
+        //     case 0:
+        //         break;
+        //     default:
+        //         alert('非法操作，请重新输入')
+        // }
+
+
+
+
+        // 作业2：作业7：水仙花数
+
+        // 例：水仙花数 153=1*1*1+5*5*5+3*3*3
+        // 输入一个数，判断是不是水仙花数
+        // var num = parseInt(prompt('请输入一个三位数'));
+        // var hundred = parseInt(num / 100),
+        //     ten = parseInt(num % 100 / 10),
+        //     bits = parseInt(num % 100 % 10);
+        // flower = hundred * hundred * hundred + ten * ten * ten + bits * bits * bits;
+        // if (num == flower) {
+        //     console.log(i+'是水仙花')
+        // } else {
+        //     console.log(i+'不是水仙花')
+        // }
+
+
+        // 作业3：判断三角形
+
+        // 根据三角形的三条边长(长、中、短三条边)，来判断三角形类型。
+
+        // 提示：
+
+        // (1) 一个三角形的边应该都为正数
+
+        // (2) 一个三角形的边都应该满足三角形条件：两边之和大于第三边
+
+        // 钝角三角形：任意两边的平方和小于第三边的平方，如：a*a+b*b<c*c
+        // var tri_a = parseInt(prompt('长边')),
+        //     tri_b = parseInt(prompt('中边')),
+        //     tri_c = parseInt(prompt('短边'));
+        // if (tri_a < 0 || tri_b < 0 || tri_c < 0) {
+        //     console.log('非三角形');
+
+        // } else if ((tri_a + tri_b) > tri_c && (tri_a + tri_c) > tri_b && (tri_b + tri_c) > tri_a) {
+        //     if ((tri_a * tri_a + tri_b * tri_b) < (tri_c * tri_c)) {
+        //         console.log('钝角')
+        //     } else if ((tri_a * tri_a + tri_b *
+        //             tri_b) == (tri_c * tri_c)) {
+        //         console.log('直角')
+        //     } else {
+        //         console.log('锐角')
+        //     }
+        // } else
+        //     console.log('非三角形');
+
+        // 作业4：按年/月/日的顺序输入一个任意日期，在页面输出：这是这一年的第几天 如：2016年1月2日
+        //     是2016年的第2天，而2016年12月31日则是2016年的第366天（因为闰年会多一天）
+        // var year = parseInt(prompt('何年')),
+        //     mouth = parseInt(prompt('何月')),
+        //     day = parseInt(prompt('何日 ')),
+        //     sum;
+        // if ((year % 100 != 0 && year % 4 == 0) || year % 400 == 0) {
+        //     switch (mouth) {
+        //         case 1:
+        //             sum = day;
+        //             break;
+        //         case 2:
+        //             sum = day + 31;
+        //             break;
+        //         case 3:
+        //             sum = day + 60;
+        //             break;
+        //         case 4:
+        //             sum = day + 91;
+        //             break;
+        //         case 5:
+        //             sum = day + 121;
+        //             break;
+        //         case 6:
+        //             sum = day + 152;
+        //             break;
+        //         case 7:
+        //             sum = day + 182;
+        //             break;
+        //         case 8:
+        //             sum = day + 213;
+        //             break;
+        //         case 9:
+        //             sum = day + 244;
+        //             break;
+        //         case 10:
+        //             sum = day + 274;
+        //             break;
+        //         case 11:
+        //             sum = day + 305;
+        //             break;
+        //         case 12:
+        //             sum = day + 335;
+        //             break;
+        //     }
+        // } else {
+        //     switch (mouth) {
+        // case 1:
+        //     sum = day;
+        //     break;
+        // case 2:
+        //     sum = day + 31;
+        //     break;
+        // case 3:
+        //     sum = day + 59;
+        //     break;
+        // case 4:
+        //     sum = day + 90;
+        //     break;
+        // case 5:
+        //     sum = day + 120;
+        //     break;
+        // case 6:
+        //     sum = day + 151;
+        //     break;
+        // case 7:
+        //     sum = day + 181;
+        //     break;
+        // case 8:
+        //     sum = day + 212;
+        //     break;
+        // case 9:
+        //     sum = day + 243;
+        //     break;
+        // case 10:
+        //     sum = day + 273;
+        //     break;
+        // case 11:
+        //     sum = day + 304;
+        //     break;
+        // case 12:
+        //     sum = day + 334;
+        //     break;
+        //     }
+        // }
+        // console.log(year + '年', mouth + '月', day + '日', "是" + year, '年的第', sum, '天');
+    </script>
+</body>
+
+</html>

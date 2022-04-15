@@ -1,0 +1,266 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-08 15:31:18
+ * @LastEditTime: 2022-04-09 09:48:53
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \W294\F2 homework\js_day05_张韵然_2022-4-8\html\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 认真理解， 函数什么时候需要参数， 什么时候需要返回值, 将下列作业用函数形式完成
+
+        // 1. 输入半径， 高， 求圆柱体的面积， 和体积， 把体积、 面积返回给函数调用者， 然后由调用者输出面积和体积大小.
+
+        // 圆面积： PI * R * R
+
+        // 圆周长： 2 * PI * R
+
+
+
+        //有参
+        /* function cylinder(r, h) {//定义函数，给定形参
+            return v = Math.PI * Math.pow(r, 2) * h,//求体积v
+            s = 2 * Math.PI * r * h + Math.PI * Math.pow(r, 2) * 2;//求面积s
+        }
+        var result = cylinder(parseInt(prompt('r')), parseInt(prompt('h')));
+        //构建函数，由用户输入实参
+        console.log(result) //输出
+        */
+
+        //无参
+        /*
+        let r = parseInt(prompt('r'));//输入半径r和高h
+        let h = parseInt(prompt('h'));
+
+        function cylinder() {//构建函数
+            return v = Math.PI * Math.pow(r, 2) * h,//求体积v
+                s = 2 * Math.PI * r * h + Math.PI * Math.pow(r, 2) * 2;//求面积s
+        }
+        var result = cylinder();//调用函数
+        console.log(result); //输出*/
+
+
+
+
+
+        // 2. 输入函一个三位数， 判定它是否是水仙花数（ 输出是否是水仙花数的结果必须由调用者来输出， 不能由数内部输出）
+
+        // g = n % 10;
+
+        // s = parseInt(n / 10) % 10;
+
+        // b = parseInt(n / 100)
+        //构建函数，给定形参
+        /*
+        function daffodils(n) {
+            let b = parseInt(n / 100), //百位数
+                s = parseInt((n % 100) / 10), //十位数
+                g = ((n % 100) % 10); //个位数
+            if (n == Math.pow(b, 3) + Math.pow(s, 3) + Math.pow(g, 3)) {
+                return true; //是
+            } else {
+                return false; //不是
+            }
+        }
+        var result = daffodils(parseInt(prompt('shu ru yige shu'))); //调用函数，用户输入实参
+        console.log(result); //输出结果
+        */
+
+
+
+        // 3. 输入三个数（ 0 - 9 之间） 找出最大数和最小数, 然后组成最大的三位数。
+
+        //有参版
+        //调用函数,输入三个数a,b,c为实参
+        /* var result = compare(parseInt(prompt('a:0-9')), parseInt(prompt('b:0-9')), parseInt(prompt('c:0-9')));
+        //输出最大值和最小值
+        console.log(result[0], result[2]);
+        //组成最大的三位数
+        console.log(result[0] * 100 + result[1] * 10 + result[2]);
+        //构建函数
+        function compare(a, b, c) {
+            //组成数组
+            let arr = [a, b, c];
+            //利用数组升序
+            return arr.sort(
+                function (a, b) {
+                    return b - a
+                }
+            )
+        } */
+
+        //无参版
+        //定义数组
+        /*  let arr = new Array(3);
+         for (i = 0; i < arr.length; i++) {
+             arr[i] = parseInt(prompt('shu ru yi ge zheng shu'));
+         }
+         //调用函数
+         var result = compare();
+         //输出最大值和最小值
+         console.log(result[2], result[0]);
+         //组成最大的三位数
+         console.log(result[2] * 100 + result[1] * 10 + result[0]);
+         //构建函数
+         function compare() {
+             //利用数组降序
+             return arr.sort(
+                 function (a, b) {
+                     return a - b
+                 }
+             )
+         } */
+
+
+        // 4. 提供一个函数， 此函数用来打印由“ * ”组成的矩形， 但是行数和列数，
+
+        // 做为形参， 由调用者来给具体的行数和列数， 最后由函数打印出对应行数列数大小的矩形
+        //调用打印机，由用户给定行数和列数
+        /* let result = printer(parseInt(prompt('row')), parseInt(prompt('column')));
+        //构建函数
+        function printer(row, column) {
+            //打印的行数
+            for (i = 1; i <= a; i++) {
+                //打印的列数
+                for (j = 1; j <= b; j++) {
+                    document.write('*');
+                }
+                document.write('<br>');
+            }
+            return '呐，你要的**';
+        } */
+
+        // 5. 如4题一样， 最后打出等腰三角形
+        //调用打印机，由用户给定腰长
+        // let result = printer(parseInt(prompt('row')));
+        // //构建函数
+        // function printer(a, b) {
+        //     //打印的腰长
+        //     for (i = 1; i <= a; i++) {
+        //         //另一条腰长
+        //         for (j = 1; j <= i; j++) {
+        //             document.write('* &nbsp');
+        //         }
+        //         document.write('<br>');
+        //     }
+        //     return '呐，你要的三角形';
+        // }
+
+
+        // 6. 输入2个日期（ 年月日）， 计算两个日期相差多少天？(改写成函数， 体会重用原则)
+        //调用时光机1，输入前后时间点（实参），得出时间点是当年的第几天
+        /* var result1 = timemachine1(year = parseInt(prompt('year')), mouth = parseInt(prompt('mouth')), day = parseInt(
+                prompt('day'))),
+            //需要计算年份差，因而取出前一个年的年份
+            year1 = year,
+            mouth1 = mouth;
+        var result2 = timemachine1(year = parseInt(prompt('year')), mouth = parseInt(prompt('mouth')),
+                day = parseInt(prompt('day'))),
+            //取出后一个年的年份
+            year2 = year,
+            mouth2 = mouth;
+        //调用时光机2，闰年收集装置，计算天数差，输出结果
+        var result5 = runniandaowanlilai();
+        var result = timemachine2();
+        console.log(result + result5);
+        //构建时光机1
+        function timemachine1(year, mouth, day) {
+            switch (mouth) {
+                case 1:
+                    sum = day;
+                    break;
+                case 2:
+                    sum = day + 31;
+                    break;
+                case 3:
+                    sum = day + 59;
+                    break;
+                case 4:
+                    sum = day + 90;
+                    break;
+                case 5:
+                    sum = day + 120;
+                    break;
+                case 6:
+                    sum = day + 151;
+                    break;
+                case 7:
+                    sum = day + 181;
+                    break;
+                case 8:
+                    sum = day + 212;
+                    break;
+                case 9:
+                    sum = day + 243;
+                    break;
+                case 10:
+                    sum = day + 273;
+                    break;
+                case 11:
+                    sum = day + 304;
+                    break;
+                case 12:
+                    sum = day + 334;
+                    break;
+            }
+            return sum;
+        }
+        //构建时光机2
+        function timemachine2(dis) {
+            //计算总天数差
+            return Math.abs((year1 - year2) * 365 + (result1 - result2));
+        }
+        //闰年收集装置
+        function runniandaowanlilai(a, b) {
+            var j = 0;
+            for (i = year1; i <= year2; i++) {
+                if ((i % 100 != 0 && i % 4 == 0) || i % 400 == 0) {
+                    j += 1;
+                    if ((((year1 % 100 != 0 && year1 % 4 == 0) || year1 % 400 == 0)) &&
+                        mouth1 > 2) {
+                        j -= 1;
+                    }
+                    if ((((year2 % 100 != 0 && year2 % 4 == 0) || year2 % 400 == 0)) &&
+                        mouth2 <= 2) {
+                        j -= 1;
+                    }
+                }
+            }
+            return j;
+        } */
+
+
+
+
+
+        // 7. 写一个函数， 有唯一参数接口1个， 参数类型为number;
+        // 返回值为1， 表示是质数； 返回值为0， 表示不是质数。
+        //调用质数判定器，输入要判定的数（实参）
+        /*  var result = primedetermine(a = parseInt(prompt('输入一个数a')));
+         //判定结果   1是  0否
+         console.log(result)
+         //构建质数判定器
+         function primedetermine(a) {
+             for (i = 2; i < Math.sqrt(a); i++) {
+                 if (a % i != 0) {
+                     return 1;
+                 } else {
+                     return 0;
+                 }
+             }
+         } */
+    </script>
+</body>
+
+</html>

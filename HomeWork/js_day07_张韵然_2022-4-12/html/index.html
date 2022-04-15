@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //存放学生信息
+        var studentArr = [{
+                name: '施航',
+                age: '22',
+                sex: '男',
+                grade: '294'
+            },
+            {
+                name: '方琦',
+                age: '22',
+                sex: '女',
+                grade: '294'
+            },
+            {
+                name: '韩梦杰',
+                age: '22',
+                sex: '男',
+                grade: '294',
+            },
+            {
+                name: '李欣珂',
+                age: '22',
+                sex: '男',
+                grade: '294',
+            },
+            {
+                name: '张颖涵',
+                age: '22',
+                sex: '女',
+                grade: '294',
+            },
+            {
+                name: '张韵然',
+                age: '22',
+                sex: '男',
+                grade: '294',
+            },
+        ];
+        menu();
+
+
+        //主菜单
+        function menu() {
+            var choose = prompt('学生管理系统v1.0\n 1、添加学生 2、删除学生 3、查询学生信息 4、修改学生信息 5、显示菜单');
+            switch (choose) {
+                case '1':
+                    AddStudent();
+                    break;
+                case '2':
+                    delStudent();
+                    break;
+                case '3':
+                    checkStudent();
+                    break;
+                case '4':
+                    updateStudent();
+                    break;
+                case '5':
+                    menu();
+                    break;
+                default:
+                    alert('输入有误，请重新输入');
+                    menu();
+            }
+        }
+        //添加学生
+        function AddStudent() {
+            //用户输入
+            var name = prompt('学生姓名');
+            var age = prompt('学生年龄');
+            var sex = prompt('学生性别');
+            var grade = prompt('学生班级');
+            // var gradename = prompt('班级')
+            //添加到学生数组中
+            var newStu = [{
+                name: 'name',
+                age: 'age',
+                sex: 'sex',
+                grade: 'grade',
+            }];
+            console.log(newStu);
+            //要求班级人数不能超过30人
+            //计算当前人数
+            var count = 0;
+            for (var i = 0; i < studentArr.length; i++) {
+                if (studentArr[i].grade == grade) {
+                    count++;
+                }
+            }
+            //当前班级人数存入count，判断是否满员，不满可以添加，已满不能添加
+            if (count < 2) {
+                studentArr.push(newStu);
+                console.log(studentArr);
+            } else {
+                alert('班级人数已满');
+                menu();
+            }
+            //询问是否继续  是，继续添加   否，返回主菜单
+            var isContinue = parseInt(prompt('是否继续,1是 2否'));
+            if (isContinue == 1) {
+                AddStudent();
+            } else {
+                menu();
+            }
+        }
+
+
+        //删除学生
+        function delStudent() {
+            //要删除学生的姓名
+            var delName = prompt('"请输入要删除学生的姓名');
+            var isDel = false;
+            //数组遍历找出该学生
+            for (var j = 0; j < studentArr.length; j++) {
+                //如果有该姓名，执行删除
+                if (studentArr[j].name == delName) {
+                    studentArr.splice(j, 1);
+                    isDel = true;
+                    alert('已删除');
+                    menu();
+                    break;
+                }
+            }
+            //没有此姓名提示
+            if (!isDel) {
+                alert('该生不存在');
+            }
+            j = 0;
+            menu();
+        }
+        //查询学生
+        function checkStudent() {
+            //要查询学生的姓名
+            var checkName = prompt('请输入要查询学生的姓名');
+            var checkSub = false;
+            for (var l = 0; l < studentArr.length; l++) {
+                if (studentArr[l].name == checkName) {
+                    alert(
+                        '姓名:' + studentArr[l].name + '\n' + '年龄:' + studentArr[l].age + '\n' +
+                        '性别:' + studentArr[l].sex + '\n' + '班级:' + studentArr[l].grade);
+                    checkSub = true;
+                    break;
+                }
+            }
+            //没有此姓名提示
+            if (!checkSub) {
+                alert('该生不存在');
+            }
+            menu();
+        }
+        //修改学生
+        function updateStudent() {
+            //要修改学生的姓名
+            var updateName = prompt('要修改学生的姓名');
+            //遍历数组找出该生,若有,下标存入updateSub
+            var updateSub = -1;
+            for (var k = 0; k < studentArr.length; k++) {
+                if (studentArr[k].name == updateName) {
+                    updateSub = k;
+                    break;
+                }
+            }
+            //没有此姓名提示
+            if (updateSub == -1) {
+                alert('该生不存在');
+                menu();
+            }
+            //输入修改信息
+            alert('请输入要修改的信息');
+            var updateName = prompt('姓名');
+            var updateAge = prompt('年龄');
+            var updateSex = prompt('性别');
+            var updateGarde = prompt('班级');
+            var updateObj = {
+                name: 'updateName',
+                age: 'updateAge',
+                sex: 'updateSex',
+                grade: 'updateGarde'
+            };
+            studentArr[updateSub] = updateObj;
+            alert('修改成功');
+            menu();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /* 清除默认样式 */
+        body,
+        div,
+        input,
+        textarea,
+        p {
+            margin: 0;
+            padding: 0
+        }
+
+        /* 整体背景 全局字体颜色 左边距 */
+        body {
+            background: rgb(0, 56, 109);
+            padding-left: 40%;
+            color: white;
+        }
+
+        /* 顶部段落样式 */
+        #p {
+            margin: 10px 0;
+        }
+
+        /* 白框样式*/
+        #area {
+            width: 30%;
+            height: 100px;
+            padding: 5px;
+            background: white;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        /* 全部清除按钮的样式 */
+        #divClearAll {
+            margin: 5px 0 10px 0;
+        }
+
+        /* 名字和添加按钮父盒子的样式 */
+        #divClearAll~.add {
+            width: 20%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 按钮的样式 */
+        Button {
+            background: rgb(255, 132, 132);
+            text-align: center;
+            border: 0px solid #000;
+            color: white;
+            padding: 0 15px;
+            margin: 5px 0 10px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部段落 -->
+    <div id="p">
+        <p>单击下面的"添加按钮",添加标签</p>
+    </div>
+    <!-- 白框 -->
+    <div id="area">
+
+    </div>
+    <!-- 名字和添加按钮 -->
+    <div>
+        <div class="add" id="divClearAll">
+            <button class="" id="buttonClearAll">全部清除</button>
+        </div>
+        <div class="add" id="">
+            <p>John Doe</p>
+            <button class="" id="buttonJohn">添加</button>
+        </div>
+        <div class="add" id="">
+            <p>Jane Doe</p>
+            <button class="" id="buttonJane">添加</button>
+        </div>
+        <div class="add" id="">
+            <p>Dan Doe</p>
+            <button class="" id="buttonDan">添加</button>
+        </div>
+        <div class="add" id="">
+            <p>Danielle Doe</p>
+            <button class="" id="buttonDanielle">添加</button>
+        </div>
+        <div class="add" id="">
+            <p>Mike Doe</p>
+            <button class="" id="buttonMike">添加</button>
+        </div>
+        <div class="add" id="">
+            <p>Leah Doe</p>
+            <button class="" id="buttonLeah">添加</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        //点击添加按钮在白框内添加相应的名字
+        buttonJohn.onclick = function () {
+            addDiv('John Doe ', 'idJohn');
+        }
+        buttonJane.onclick = function () {
+            addDiv('Jane Doe ', 'idJane');
+        }
+        buttonDan.onclick = function () {
+            addDiv('Dan Doe ', 'idDan');
+        }
+        buttonDanielle.onclick = function () {
+            addDiv('Danielle Doe ', 'idDanielle');
+        }
+        buttonMike.onclick = function () {
+            addDiv('Mike Doe ', 'idMike');
+        }
+        buttonLeah.onclick = function () {
+            addDiv('Leah Doe ', 'idLeah');
+        }
+
+        //单击全部清除用空文本替换白框所有子节点
+        var buttonClearAll = document.getElementById('buttonClearAll');
+        buttonClearAll.onclick = function () {
+            var area = document.getElementById('area')
+            area.innerHTML = '';
+        }
+        //添加元素节点,在元素内添加文本(名字)
+        function addDiv(contentName, name) {
+            var divName = document.createElement('div');
+            var contentName = document.createTextNode(contentName);
+            divName.appendChild(contentName);
+            divName.innerHTML += '<span onclick="closeX(this)">X</span>';
+            divName.setAttribute('id', name)
+            document.getElementById('area').appendChild(divName);
+            styleDiv(divName);
+        }
+        //单击X 删除对应名字
+        function closeX(del) {
+            var delX = del.parentNode;
+            delX.remove(delX);
+        }
+        //修改元素样式
+        function styleDiv(div) {
+            div.style.backgroundColor = 'green';
+            div.style.paddingRight = '5px';
+            div.style.marginRight = '5px';
+            div.style.marginBottom = '5px';
+            div.style.fontSize = '14px';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,178 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-09 14:53:13
+ * @LastEditTime: 2022-04-09 17:09:14
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \W294\F2 homework\js_day05_张韵然_2022-4-8\html\ATM copy.HTML
+-->
+<!--
+ * @Author: your name
+ * @Date: 2022-04-09 09:49:44
+ * @LastEditTime: 2022-04-09 14:49:40
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \W294\F2 homework\js_day05_张韵然_2022-4-8\html\ATM.HTML
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        /* ATM机需求
+1、登陆
+要求用户输入卡号和密码。如果三次之内可以重复输入；三次以上输入错误，则退出系统。
+
+
+2、登陆成功后，显示主界面。
+要求用户输入所需的操作，然后调用相应的函数，实现操作。操作完成后，再回到主界面，继续要求用户输入所需的操作。
+ 1存款 2 取款  3查询余额  4转账
+3、存款：
+要求用户输入存款金额，完成存款操作。（在原来金额基础上加上存款金额）
+请输入存款金额
+4、取款
+要求用户输入取款金额，完成取款操作。如果超支，不允许取款，并给予提示（在原来金额基础上减上存款金额）
+
+5、转帐
+要求用户输入转帐卡号，并输入转帐金额。如果超支，不允许转帐，并给予提示
+
+6、显示余额
+显示当前帐号余额
+7、退出
+退出程序，结束操作。
+ */
+        var cardArr = [62170, 62171, 62172, 62173, 62174];
+        var passwordArr = [00000, 111111, 22222, 333333, 444444];
+        var balanceArr = [500, 1000, 2000, 3000, 4000];
+        var result = signin();
+        var home = home();
+        //登录
+        function signin() {
+            for (j = 1; j <= 3; j++) {
+                var card = prompt('请输入卡号'),
+                    password = prompt('请输入密码');
+                while (card == '' || password == '') {
+                    alert("未输入卡号或密码");
+                    card = prompt('请输入卡号');
+                    password = prompt('请输入密码');
+                }
+                var card = Number(card),
+                    password = Number(password);
+                for (i = 0; i < cardArr.length; i++) {
+                    // console.log(typeof (card, cardArr[i]))
+                    if (card == cardArr[i] && password == passwordArr[i]) {
+                        return alert('登录成功');
+                    }
+                }
+                alert('卡号或密码输入错误');
+            }
+            if (j = 3) {
+                alert('帐户已锁定');
+                j = 0;
+                i = 0;
+                return signin();
+            }
+        }
+        //主界面
+        function home() {
+            var choose = prompt(('请选择您所需要的操作 1存款 2取款 3查询余额 4转账 5退出'));
+            while (choose > 5 || choose < 1) {
+                alert('输入有误，请重新输入');
+                choose = prompt('请选择您所需要的操作 1存款 2取款 3查询余额 4转账 5退出');
+            }
+            operation();
+            //执行用户的操作
+            function operation() {
+                switch (choose) {
+                    case '1':
+                        save();
+                        break;
+                    case '2':
+                        withdrawals();
+                        break;
+                    case '3':
+                        querybalance();
+                        break;
+                    case '4':
+                        transfer();
+                        break;
+                    case '5':
+                        exit();
+                        break;
+                }
+                //存款
+                function save() {
+                    var moneysave = parseInt(prompt('请输入存款金额'));
+                    balanceArr[i] = balanceArr[i] + moneysave;
+                    alert('存款成功，当前余额' + balanceArr[i]);
+                    backhome();
+                }
+                // 取款
+                function withdrawals() {
+                    var moneywithdrawals = parseInt(prompt('请输入取款金额'));
+                    while (moneywithdrawals > balanceArr[i]) {
+                        alert('余额不足，当前余额' + balanceArr[i]);
+                        moneywithdrawals = parseInt(prompt('请输入取款金额'));
+                    }
+                    balanceArr[i] = balanceArr[i] - moneywithdrawals;
+                    alert('取款成功，当前余额' + balanceArr[i]);
+                    backhome();
+                }
+                //查询余额
+                function querybalance() {
+                    alert(balanceArr[i]);
+                    backhome();
+                }
+                //转账
+                function transfer() {
+                    var tocard = prompt('请输入您要转入的帐户卡号');
+                    while (tocard == '') {
+                        alert("非法值");
+                        card = prompt('请输入卡号');
+                    }
+                    var tocard = Number(tocard);
+                    var jump = false;
+                    for (k = 0; k < cardArr.length; k++) {
+                        while (tocard == cardArr[k]) {
+                            var moneytransfer = parseInt(prompt('请输入转账金额'));
+                            if (moneytransfer <= balanceArr[i]) {
+                                balanceArr[k] = balanceArr[k] + moneytransfer;
+                                balanceArr[i] = balanceArr[i] - moneytransfer;
+                                jump = true;
+                                alert("转账成功，当前余额" + balanceArr[i]);
+                            } else {
+                                jump = true;
+                                alert('转账失败，余额不足，当前余额' + balanceArr[i]);
+                            }
+                            break;
+                        }
+                    }
+                    if (jump == false) {
+                        alert("卡号不存在");
+                    }
+                    backhome();
+                }
+                //退出
+                function exit() {
+                    alert('已退出');
+                    signin();
+                    home();
+                }
+
+            }
+            //返回菜单
+            function backhome() {
+                var backhome = home();
+            }
+        }
+    </script>
+</body>
+
+</html>
