@@ -95,8 +95,9 @@
         function xdyb() {
             var imgList = document.getElementById('imgList');
             console.log(imgList);
-            // var mrgLeft = parseInt(imgList.style.marginLeft);
-            imgList.style.transform = "translateX(12.5%)";
+            var mrgLeft = parseInt(imgList.style.marginLeft);
+            imgList.style.marginLeft = mrgLeft + 980 + 'px';
+            imgList.style.transition = 'all 0.5s linear';
         }
     </script>
 </body>
