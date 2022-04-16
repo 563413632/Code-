@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        p,
+        div,
+        h3,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #imgList {
+            width: 1005px;
+            background: rgb(255, 163, 78);
+        }
+
+        #numList {
+            width: 1005px;
+            display: flex;
+            flex-wrap: nowrap;
+            background: rgb(255, 163, 78);
+            justify-content: center;
+            align-items: end;
+            height: 50px;
+            /* border: 1px solid #000; */
+        }
+
+        #numList>div {
+            width: 10%;
+            color: aliceblue;
+            border: 1px solid rgb(255, 243, 79);
+            text-align: center;
+            border-radius: 3px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        #numList>.active {
+            height: 40px;
+            line-height: 40px;
+            /* transform: scale3d(1, 1.1, 1); */
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="imgList">
+            <img id="img" src="../images/index_slide_con01.png" alt="">
+            <!-- <img src="../images/index_slide_con02.png" alt="">
+            <img src="../images/index_slide_con03.png" alt="">
+            <img src="../images/index_slide_con04.png" alt="">
+            <img src="../images/index_slide_con05.png" alt=""> -->
+        </div>
+        <div id="numList">
+            <div id="div1">1</div>
+            <div id="div2">2</div>
+            <div id="div3">3</div>
+            <div id="div4">4</div>
+            <div id="div5">5</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var img = document.getElementById('img');
+        var numList = document.getElementById('numList');
+        var numListArr = numList.querySelectorAll('div');
+        // var imgArr = ['index_slide_con01.png', 'index_slide_con02.png', 'index_slide_con03.png',
+        //     'index_slide_con04.png',
+        //     'index_slide_con05.png'
+        // ]
+        for (let i = 0; i < numListArr.length; i++) {
+            numListArr[i].onclick = function () {
+                numListArr.forEach(function (item) {
+                    item.classList.remove('active');
+                })
+                this.classList.add('active');
+                img.src = '../images/index_slide_con0' + (i + 1) + '.png';
+            }
+        }
+
+
+
+        // function img(obj) {
+        //     while (obj == div1) {
+        //         imgArr.src = '../images/index_slide_con01.png';
+        //         break;
+        //     }
+        //     while (obj == div2) {
+        //         imgArr.src = '../images/index_slide_con02.png';
+        //         break;
+        //     }
+        //     while (obj == div3) {
+        //         imgArr.src = '../images/index_slide_con03.png';
+        //         break;
+        //     }
+        //     while (obj == div4) {
+        //         imgArr.src = '../images/index_slide_con04.png';
+        //         break;
+        //     }
+        //     while (obj == div5) {
+        //         imgArr.src = '../images/index_slide_con05.png';
+        //         break;
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

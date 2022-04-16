@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body,
+        p,
+        div,
+        h3,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .mianLi {
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background-image:
+                linear-gradient(#AA4273,
+                    #D34F8F,
+                    #AA4273);
+            overflow: hidden;
+        }
+
+        .erUl>li {
+            background-color: #e88192;
+            height: 40px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="" id="mianUl" name="">
+        <li class="mianLi" id="mianLi1">一级菜单
+            <ul class="erUl" id="">
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+            </ul>
+        </li>
+        <li class="mianLi" id="mianLi2">一级菜单
+            <ul class="erUl" id="">
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+            </ul>
+        </li>
+        <li class="mianLi" id="mianLi3">一级菜单
+            <ul class="erUl" id="">
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+            </ul>
+        </li>
+        <li class="mianLi" id="mianLi4">一级菜单
+            <ul class="erUl" id="">
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+                <li class="" id="">二级菜单</li>
+            </ul>
+        </li>
+    </ul>
+    <script type="text/javascript">
+        //1  点击一级菜单  如果是展开的  就收起来,否则反之
+        var ulArr = document.getElementById('mianUl');
+        // console.log(ulArr);
+        //ul下的所有子节点集合,包含空格
+        var mianChild = ulArr.childNodes;
+        console.log(mianChild);
+        //取出为元素的一级菜单
+        var erLiArr = [];
+        for (var i = 0; i < mianChild.length; i++) {
+            if (mianChild[i].nodeType == 1) {
+                erLiArr.push(mianChild[i])
+            }
+        }
+        console.log(erLiArr);
+        for (var i = 0; i < erLiArr.length; i++) {
+            erLiArr[i].onclick = function () {
+                var height = getStyle(this).height;
+                if (height == '40px') {
+                    this.style.height = 'auto';
+                } else {
+                    this.style.height = '40px';
+                }
+            }
+        }
+
+        function getStyle(ele) {
+            if (ele.currentStyle) {
+                return ele.currentStyle;
+            } else {
+                return document.defaultView.getComputedStyle(ele);
+            }
+        }
+    </script>
+</body>
+
+</html>

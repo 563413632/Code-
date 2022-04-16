@@ -1,0 +1,216 @@
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-size: 16px;
+}
+
+.clear::after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+/* header */
+#header {
+    background-color: #87c8da;
+    text-align: center;
+    /* color: white; */
+    padding: .625rem 0;
+    line-height: 1.3125rem;
+
+}
+
+#header>a {
+    color: rgb(255, 255, 255);
+}
+
+/* nav */
+#nav {
+    width: 100%;
+    height: 100%;
+    padding: .9375rem 0.5%;
+    box-sizing: border-box;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+
+    /* logo */
+    #navImg {
+        width: 30%;
+        float: left;
+        /* vertical-align: middle; */
+        height: 40px;
+        line-height: 40px;
+        /* height: 100%; */
+    }
+        #navImg>img {
+            height: 100%;
+            cursor: pointer;
+        }
+ /* 右侧导航栏 #navRight */
+    #navRight{
+        float: right;
+        width: 70%;
+        transition: all .4s linear;
+    }
+    #navRight:hover{
+        /* transform: translateX(-100px); */
+        overflow: visible;
+     }
+    /* phone */
+    #navRight>#phone {
+        width: 3%;
+        float: right;
+        font-size: 1.5rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        cursor: pointer;
+        white-space: nowrap;
+        /* outline: 1px solid #000; */
+
+    }
+    #navRight>#phone>a{
+        padding-left: 20px;
+    }
+    .active{
+        transform: translateX(-170px);
+        color:#87c8da
+    }
+
+    /* ul */
+    #navUl {
+        width: 97%;
+        height: 100%;
+        /* float: left; */
+        list-style: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:end;
+        flex-shrink: 0;
+        text-align: center;
+        /* padding-right: 5.625rem ; */
+    }
+
+        /* li  */
+        #navUl>li{
+            height: 40px;
+            line-height: 40px;
+            font-size: 1rem;
+            margin: 0 .8%;
+            flex-basis: auto;
+        }
+        /* li--->a  */
+        #navUl>li>a,#navUl>li>ul>li>a {
+            color: black;
+            text-decoration: none;
+        }
+        #navUl>li:first-child>a{
+            color:#87c8da;
+        }
+         /* li--->booknow ,*/
+        #navUl > #bookNow{
+            border-radius: .125rem;
+            background:#87c8da;
+            padding: 0 1rem;
+        }
+        #navUl > #bookNow>a{
+            color: white;
+        }
+         /* 购物袋  电话 */
+
+        #shopDiv1{
+            margin: auto;
+            width: 14px;
+            height: 8px;
+            border: 1px solid #87c8da;
+            border-radius: 10px 10px 0 0;
+            margin-top: -6px;
+            border-bottom: none;
+
+        }
+        #shopDiv2{
+            text-align: center;
+            height: 2.25rem;
+            line-height: 2.25rem;
+            width: 2.25rem;
+            border: 1px solid #87c8da;
+            color: #87c8da;
+            cursor: pointer;
+        }
+        #shopLi:hover #shopDiv1{
+            margin-top: -8px;
+            /* height: 10px; */
+        }
+        #shopLi:hover #shopDiv2{
+            background-color: #87c8da;
+            color:white;
+        }
+            /* li--->ul  */
+            #navUl>li>ul{
+            width: 200%;
+            list-style: none;
+            position: relative;
+            z-index: 2;
+            right: 15%;
+            box-shadow: darkgrey 10px 10px 30px 5px;
+            display: none;
+            }
+            #navUl>li:hover ul{
+            display: block;
+            }
+                /* li--->ul--->li  */
+                #navUl>li>ul>li{
+                font-size: 1rem;
+                text-align: left;
+                text-transform: uppercase;
+                background-color: white;
+                padding-left: 7%;
+                }
+                #navUl>li>ul>li:hover{
+                    background-color: rgba(221, 221, 221, 0.815);
+                }
+
+/* banner */
+#banner{
+     /* content: ""; */
+    width: 99%;
+    margin: auto;
+    min-height: 700px;
+    /* height: 90%; */
+    position: relative;
+    overflow: hidden;
+}
+    /* banner-->img */
+    #banner>img{
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        /* min-height: 30px; */
+    }

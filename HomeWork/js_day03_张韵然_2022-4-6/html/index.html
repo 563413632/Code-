@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 1.找出100--999里面有多少个水仙花数，分别输出这些水仙花数？
+        // for (i = 100; i < 1000; i++) {
+        //     hundred = parseInt(i / 100),
+        //         ten = parseInt(i % 100 / 10),
+        //         bits = parseInt(i % 100 % 10);
+        //     flower = hundred * hundred * hundred + ten * ten * ten + bits * bits * bits;
+        //     if (i == flower) {
+        //         console.log(i)
+        //     }
+        // }
+        /*    function sxh(flower) {
+                for (i = 100; i < 1000; i++) {
+                    hundred = parseInt(i / 100);
+                    ten = parseInt(i % 100 / 10);
+                    bits = parseInt(i % 100 % 10);
+                    flower = hundred * hundred * hundred + ten * ten * ten + bits * bits * bits;
+                }
+                return flower;
+            }
+            var r = sxh();
+            if (i == r) {
+                console.log(r);
+            }
+            */
+
+
+        // 2.猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个
+        // 第二天早上又将剩下的桃子吃掉一半，又多吃了一个。
+        // 以后每天早上都吃了前一天剩下的一半零一个。到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘了多少。
+        // var num = 1;
+        // for (i = 1; i <= 10; i++) {
+        //     num = (num + 1) * 2
+        // }
+        // console.log(num);
+
+
+
+        // 3.题目：有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
+        //GG
+        // var num1 = 1,
+        //     num2 = 2,
+        //     temp2,
+        //     sum = 2;
+        // for (i = 2; i <= 20; i++) {
+        //     temp = num2;
+        //     num2 = num1 + num2;
+        //     num1 = temp;
+        //     temp2 = num2 / num1;
+        //     sum = sum + temp2;
+        // }
+        // document.write('前20项之和是' + sum);
+
+
+
+
+        // 4.小球从100米掉落，弹起到50米，然后再掉落，弹到25米，弹10次以后，小球经过的路径是多少米（截止第10次弹地）
+        // var height = 100,
+        //     sum = 0;
+        // for (i = 10; i > 0; i--) {
+        //     sum = sum + height + height / 2;
+        //     height = height / 2;
+        // }
+        // sum = sum - height
+        // console.log(sum)
+
+        // 5.有一队兵，他想知道有多少人，便让士兵排队报数：按从1至5报数，最末一个士兵报的数为1；
+        // 按从1至6报数，最末一个士兵报的数为5；按从1至7报数，最末一个士兵报的数为4；最后再按从1至11报数，
+        // 最末一个士兵报的数为10。编程求韩信至少有多少兵？
+        // var i;
+        // for (i = 10; i > 0; i++) {
+        //     if ((i % 5 == 1) && (i % 6 == 5) && (i % 7 == 4) && (i % 11 == 10)) {
+        //         break;
+        //     }
+        // }
+
+        // 1.序列：1，2，3，5，8，13...。找出第20个数是多少?得出前20个数之和是多少？
+        // var num1 = 1,
+        //     num2 = 2,
+        //     sum = 3;
+        // for (i = 3; i <= 20; i++) {
+        //     temp = num2;
+        //     num2 = num1 + num2;
+        //     num1 = temp;
+        //     sum = num2 + sum;
+        // }
+        // document.write('第20项是'num2, '<br>','前20项之和是' sum);
+
+
+
+        // 2：用*画等腰三角形
+        // 提示：画空格用&nbsp;或者&ensp;
+        // 如：
+        // *
+        // ***
+        // *****
+        // *******
+        // document.write("&nbsp;&nbsp;&nbsp;&nbsp;*<br>");
+        // document.write("&nbsp;&nbsp;&nbsp;* *<br>");
+        // document.write("&nbsp;&nbsp;* * *<br>");
+        // document.write("&nbsp;* * * *<br>");
+        // document.write("* * * * *<br>");
+
+
+        // for (i = 1; i <= 5; i++) {
+        //     for (j = 1; j <=
+        //         i; j++) {
+        //         document.write("&nbsp; *");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+
+        // for (i = 1; i <= 9; i++) {
+        //     for (j = 1; j <=
+        //         i; j++) {
+        // document.write(i + '*', j + ' = ', i * j + "&nbsp");
+        //     }
+        //     document.write("<br>");
+        // }
+
+
+
+        // 3：计算饭钱
+
+        // 有30个人，其中有男人、女人和小孩，在一家饭馆里吃饭 共花了500元，每个男人各花30元，
+
+        // 每个女人各花20元，每个小孩各花10元，问男人、女人和小孩各有几人？
+        // var man, woman, child;
+        // for (man = 1; man <= 30; man++) {
+        //     for (woman = 1; woman <= 30; woman++) {
+        //         child = 30 - woman - man;
+        //         if (man * 30 + woman * 20 + child * 10 == 500) {
+        //             console.log(man, woman, child)
+        //         }
+        //     }
+        // }
+
+
+
+        // 4.将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5。输入60=2*2*3*5。
+        // var num = parseInt(prompt('number'));
+        // document.write('=1');
+        // for (i = 2; i <= num; i++) {
+        //     while (num % i == 0) {
+        //         num = num / i;
+        //         document.write('*' + i);
+        //     }
+        // }
+
+
+
+        // 5.输入2个日期 （年月日），计算两个日期相差多少天？
+        // GG
+    </script>
+</body>
+
+</html>
