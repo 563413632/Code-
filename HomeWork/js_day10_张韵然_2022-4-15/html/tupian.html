@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        body,
+        div,
+        dl,
+        dt,
+        dd,
+        ul,
+        ol,
+        li,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        pre,
+        code,
+        form,
+        fieldset,
+        legend,
+        input,
+        textarea,
+        p,
+        blockquote,
+        th,
+        td {
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background-color: rgb(112, 110, 110);
+        }
+
+        figure {
+            width: 75rem;
+            height: 42.1875rem;
+            /* width: 37.5rem; */
+            /* height: 355px; */
+            /* margin: 100px auto; */
+            text-transform: uppercase;
+            background-image: url(../images/img-original.jpg);
+            color: aliceblue;
+            position: relative;
+
+        }
+
+        figure>img {
+            /* visibility: hidden; */
+            position: sticky;
+            z-index: 2;
+        }
+
+        #modified,
+        #original {
+            padding: 0 2rem;
+            position: relative;
+            top: -40px;
+            z-index: 2;
+        }
+
+        #original {
+            float: right;
+            z-index: 1;
+        }
+
+        #jiantou {
+            position: absolute;
+            font-size: 25px;
+            border-radius: 25px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgb(112, 110, 110);
+            box-shadow: rgb(112, 110, 110) 1px 1px 50px 5px;
+            top: 300px;
+            cursor: pointer;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <div id="jiantou">&lt;&gt;</div>
+        <img src="../images/img-modified.jpg" alt="">
+        <figcaption id="original">original</figcaption>
+        <figcaption id="modified">modified</figcaption>
+    </figure>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>
