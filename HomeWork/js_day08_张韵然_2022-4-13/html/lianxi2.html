@@ -42,6 +42,11 @@
             width: auto;
         }
 
+        #imgList>img {
+            width: 980px;
+        }
+
+
         #lt,
         #gt {
             font-size: 60px;
@@ -86,18 +91,28 @@
 
         function xdzo() {
             var imgList = document.getElementById('imgList');
-            console.log(imgList);
+            // console.log(imgList);
             var mrgLeft = parseInt(imgList.style.marginLeft);
+            console.log(mrgLeft);
             imgList.style.marginLeft = mrgLeft - 980 + 'px';
             imgList.style.transition = 'all 0.5s linear';
+            if (mrgLeft == -6860) {
+                imgList.style.marginLeft = mrgLeft + 6860 + 'px';
+                imgList.style.transition = 'all 0.5s linear';
+            }
         }
 
         function xdyb() {
             var imgList = document.getElementById('imgList');
-            console.log(imgList);
+            // console.log(imgList);
             var mrgLeft = parseInt(imgList.style.marginLeft);
+            console.log(mrgLeft);
             imgList.style.marginLeft = mrgLeft + 980 + 'px';
             imgList.style.transition = 'all 0.5s linear';
+            if (mrgLeft == 0) {
+                imgList.style.marginLeft = mrgLeft - 6860 + 'px';
+                imgList.style.transition = 'all 0.5s linear';
+            }
         }
     </script>
 </body>

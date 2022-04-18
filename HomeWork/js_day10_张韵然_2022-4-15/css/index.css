@@ -58,7 +58,7 @@ html {
     padding: .9375rem 0.5%;
     box-sizing: border-box;
     box-sizing: border-box;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
     /* logo */
@@ -93,7 +93,8 @@ html {
         line-height: 2.5rem;
         cursor: pointer;
         white-space: nowrap;
-        /* outline: 1px solid #000; */
+        outline: 5px solid rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
 
     }
     #navRight>#phone>a{
@@ -143,7 +144,7 @@ html {
         #navUl > #bookNow>a{
             color: white;
         }
-         /* 购物袋  电话 */
+         /* 购物袋   */
 
         #shopDiv1{
             margin: auto;
