@@ -52,6 +52,7 @@
         var div1 = document.getElementById('div1');
         var div1Top = div1.offsetTop;
         console.log(div1Top);
+        console.log(div1.offsetParent);
         document.onscroll = function () {
             var top = document.documentElement.scrollTop;
             console.log(div1Top, top);
