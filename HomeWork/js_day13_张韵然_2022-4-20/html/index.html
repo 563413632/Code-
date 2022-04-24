@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #494d3e;
+            overflow: hidden;
+        }
+
+        #divValleyofdeath {
+            width: 441px;
+            height: 662px;
+            margin: auto;
+            background-image: url(../images/bgi.jpg);
+            border: 1px solid rgb(255, 1, 1);
+            position: relative;
+            overflow: hidden;
+            cursor: none;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            line-height: 662px;
+        }
+
+        #divValleyofdeath img {
+            position: absolute;
+            z-index: 2;
+        }
+
+
+        #playerPlane {
+            position: absolute;
+            z-index: 10;
+            width: 20%;
+        }
+
+        #bP {
+            position: absolute;
+        }
+
+        #infoBar {
+            display: inline-block;
+            width: 100px;
+            height: 20px;
+            background-color: #00ff00;
+            border-radius: 3px;
+        }
+
+        #points {
+            border: 1px solid #000;
+            display: inline-block;
+            width: 0px;
+            background-color: rgb(29, 255, 217);
+        }
+
+        #points::before {
+            display: block;
+            content: "下一关所需积分";
+            width: 100px;
+            font-size: 14px;
+            background-color: rgb(29, 255, 217);
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bP">
+        血量<span id="infoBar">10</span>
+        <br>
+        积分<span id="points">0</span>
+        <br>
+        <span id="guanQia">关卡1</span>
+    </div>
+    <div class="" id="divValleyofdeath">
+    </div>
+    <div>
+        <button id="star">开始</button>
+        <button id="restar">重新开始</button>
+        <button id="stop">暂停</button>
+        <button id="conGame" disabled>继续</button>
+        <audio preload id="audio" autoplay loop>
+            <source src="../audio/bgm_zhandou2.mp3">
+        </audio>
+    </div>
+    <script type="text/javascript" src="../js/play.js">
+
+    </script>
+</body>
+
+</html>
