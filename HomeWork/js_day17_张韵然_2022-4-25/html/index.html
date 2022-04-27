@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* table, */
+        tr,
+        th,
+        td {
+            outline: 1px solid #000;
+        }
+
+        table {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #section {
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+            /* border: 1px solid #000; */
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table" id="table">
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="cbxAll" value=""></th>
+                <th>ID</th>
+                <th>卡号</th>
+                <th>密码</th>
+                <th>余额</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+        </tbody>
+        <!-- <section id="section">
+            <p>添加用户</p>
+            <div><label for="id">用户名
+                    <input type="text" id="userId">
+                </label> </div>
+            <div><label for="idCard">卡号
+                    <input type="text" id="idCard">
+                </label> </div>
+            <div><label for="pwd">密码
+                    <input type="text" id="pwd">
+                </label> </div>
+            <div><label for="money">金额
+                    <input type="text" id="money">
+                </label> </div>
+            <button id="submit">提交</button>
+        </section> -->
+    </table>
+    <div id="page"></div>
+    <script src="../js/jQuery3.6.js"></script>
+    <script src="../js/user.js"></script>
+    <script src="../js/index.js">
+
+    </script>
+</body>
+
+</html>

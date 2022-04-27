@@ -1,0 +1,25 @@
+/* css */
+/* 默认字体 */
+html{
+    font-size:16px;
+}
+
+/* 清除默认样式 */
+.clearDefualt{
+    margin: 0;
+    padding: 0;
+}
+
+/* 左右浮动 */
+.floatLeft{
+    float: left;
+}
+.floatRight{
+    float:right;
+}
+/* 清除塌陷 */
+.clear{
+    content: '';
+    clear: both;
+    display: block;
+}

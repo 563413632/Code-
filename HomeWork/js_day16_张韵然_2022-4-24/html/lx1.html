@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 100%;
+
+        }
+        th,td{
+            border: 1px solid red;
+        }
+
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <th><input type="checkbox" name="cbxALl" id="cbxAll"></th>
+    <th>学号</th>
+    <th>姓名</th>
+    <th>班级</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" class="cbxItem"></td>
+        <td>内容</td>
+        <td>内容</td>
+        <td>内容</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="cbxItem"></td>
+        <td>内容</td>
+        <td>内容</td>
+        <td>内容</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" class="cbxItem"></td>
+        <td>内容</td>
+        <td>内容</td>
+        <td>内容</td>
+    </tr>
+    </tbody>
+</table>
+<button id="btnFan">反选</button>
+
+<script src="../js/jQuery3.6"></script>
+<script type="text/javascript">
+    (function ($) {
+        $("#cbxAll").click(function () {
+            //获取全选checkbox的状态
+            let state = $("#cbxAll").prop("checked");
+           //将每一项数据前的checkbox改成和全选checkbox一样的状态
+            $(".cbxItem").prop("checked",state);
+        })
+
+        // 给每一行中的checkbox添加点击事件
+        $(".cbxItem").click(function () {
+            //判断所有的行中，checkbox的状态，是否为全部选中
+            // 如果 ，是全选变成true, 否则把全选变成false
+            checkAllChecked();
+        })
+
+
+         $("#btnFan").click(function () {
+            let allCheckBox = $(".cbxItem");
+            for(var i=0 ;i <allCheckBox.length;i++){
+                allCheckBox[i].checked = !allCheckBox[i].checked;
+            }
+             checkAllChecked();
+
+         })
+
+
+        function checkAllChecked() {
+            if($(".cbxItem:not(:checked)").length==0){ //没有选中的个数
+                $("#cbxAll").prop("checked",true);
+            }else{
+                $("#cbxAll").prop("checked",false);
+            }
+        }
+
+    })(jQuery);
+
+
+
+</script>
+</body>
+</html>
